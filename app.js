@@ -9,13 +9,18 @@ client.on('qr', qr => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
+    client.sendMessage('5492216335888@c.us', 'Cliente listo!').then(response => {
+        if(response.id.fromMe){
+            console.log('El mensaje fue enviado')
+        }
+    })
 });
 
 client.on('message', message => {
-        console.log(message.body)
         if(message.body == 'hola' || message.body == 'Hola') {
-            message.reply('Hola! Soy el bot de Agustin, como estas?');
+            message.reply('Hola! Soy el bot de Nancy, como estas?');
         }
 });
+
 
 client.initialize();
